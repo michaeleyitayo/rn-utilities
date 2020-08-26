@@ -8,8 +8,10 @@ export default function App() {
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
-      <UI.Row justifyEnd alignCenter>
-        <Text>Test</Text>
+      <UI.Row justifyEnd alignEnd>
+        <UI.Col>
+          <Text>Test</Text>
+        </UI.Col>
         <Text style={{ fontSize: 22 }}>Test2</Text>
       </UI.Row>
     </View>
