@@ -5,7 +5,7 @@ import * as UI from "./lib/new";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
 
-// const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBar.currentHeight;
+const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBar.currentHeight;
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -35,7 +35,7 @@ export default function App() {
           Button
         </UI.Text>
       </UI.Button>
-      {/* <StatusBar style={styles.statusBar} backgroundColor="red" /> */}
+      <StatusBar style={styles.statusBar} backgroundColor="red" />
     </View>
   );
 }
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     borderRadius: 10,
   },
-  // statusBar: {
-  //   height: STATUSBAR_HEIGHT,
-  // },
+  statusBar: {
+    height: STATUSBAR_HEIGHT,
+  },
 });
