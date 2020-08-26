@@ -1,9 +1,11 @@
-import { StatusBar } from "expo-status-bar";
+// import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import * as UI from "./lib/new";
 import * as Font from "expo-font";
 import { AppLoading } from "expo";
+
+// const STATUSBAR_HEIGHT = Platform.OS === "ios" ? 20 : StatusBar.currentHeight;
 
 const fetchFonts = () => {
   return Font.loadAsync({
@@ -33,7 +35,7 @@ export default function App() {
           Button
         </UI.Text>
       </UI.Button>
-      <StatusBar style="auto" />
+      {/* <StatusBar style={styles.statusBar} backgroundColor="red" /> */}
     </View>
   );
 }
@@ -50,4 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     borderRadius: 10,
   },
+  // statusBar: {
+  //   height: STATUSBAR_HEIGHT,
+  // },
 });
