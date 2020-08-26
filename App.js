@@ -1,19 +1,34 @@
 import { StatusBar } from "expo-status-bar";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import * as UI from "./lib/new";
+import * as Font from "expo-font";
+import { AppLoading } from "expo";
+
+const fetchFonts = () => {
+  return Font.loadAsync({
+    "montserrat-bold": require("./assets/fonts/Montserrat-Bold.ttf"),
+    montserrat: require("./assets/fonts/Montserrat-Regular.ttf"),
+  });
+};
 
 export default function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
+
+  if (!fontLoaded) {
+    return (
+      <AppLoading
+        startAsync={fetchFonts}
+        onFinish={() => setFontLoaded(true)}
+      />
+    );
+  }
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <UI.Text h1 textJustify>
+        Open up App.js to start working on your app!
+      </UI.Text>
       <StatusBar style="auto" />
-      <UI.Row justifyEnd alignEnd>
-        <UI.Col>
-          <Text>Test</Text>
-        </UI.Col>
-        <Text style={{ fontSize: 22 }}>Test2</Text>
-      </UI.Row>
     </View>
   );
 }
