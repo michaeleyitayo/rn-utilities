@@ -25,9 +25,14 @@ export default function App() {
   }
   return (
     <View style={styles.container}>
-      <UI.Text h1 textJustify>
+      <UI.Text textJustify>
         Open up App.js to start working on your app!
       </UI.Text>
+      <UI.Button style={styles.btn} onClick={() => console.log("Checking")}>
+        <UI.Text color="#fff" h1>
+          Button
+        </UI.Text>
+      </UI.Button>
       <StatusBar style="auto" />
     </View>
   );
@@ -39,5 +44,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+  btn: {
+    padding: 20,
+    backgroundColor: "red",
+    borderRadius: 10,
   },
 });
